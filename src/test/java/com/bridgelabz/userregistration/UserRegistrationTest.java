@@ -68,7 +68,7 @@ public class UserRegistrationTest {
 	}
 	@Test
 	public void givenPassword_When_ShouldReturnFalse() {
-		boolean isValid = register.validatePassword("c4&yr");
+		boolean isValid = register.validatePassword("c81km0skd");
 		Assert.assertFalse(isValid);
 	}
 	
