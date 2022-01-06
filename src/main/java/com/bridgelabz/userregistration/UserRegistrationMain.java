@@ -15,6 +15,9 @@ public class UserRegistrationMain {
 		System.out.println("Enter Phone Number: ");
 		String number = sc.next();
 		registration.validatePhoneNumber(number);
+		System.out.println("Enter Password: ");
+		String password = sc.next();
+		registration.validatePhoneNumber(password);
 	}
 
 }

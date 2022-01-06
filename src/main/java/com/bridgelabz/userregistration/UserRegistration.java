@@ -7,7 +7,8 @@ public class UserRegistration {
 	private static final String LAST_NAME_REGEX = "^[A-Z][a-z]{2,}$";
 	private static final String EMAIL_REGEX = "^[a-zA-Z0-9_-]+(?:\\.[a-zA-Z0-9_+-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
 	private static final String PHONE_NUMBER_REGEX = "^[0-9]{2}[0-9]{10}";
-	static boolean isFirstNameValid,isLastNameValid,isMailValid,isNumberValid;
+	private static final String PASSWORD_REGEX = "^[0-9 a-z A-Z @#$%^&-+=]{8,}$";
+	static boolean isFirstNameValid,isLastNameValid,isMailValid,isNumberValid,isPasswordValid;
 	
 	public boolean validateFirstName(String firstName) {
 		isFirstNameValid= Pattern.matches(FIRST_NAME_REGEX,firstName);
@@ -36,5 +37,12 @@ public class UserRegistration {
 			System.out.println("Phone Number is invalid");
 		}
 		return Pattern.matches(PHONE_NUMBER_REGEX, phoneNumber);
+	}
+	public boolean validatePassword(String password) {
+		isPasswordValid= Pattern.matches(PASSWORD_REGEX, password);
+		if(!isPasswordValid) {
+			System.out.println("Password is invalid");
+		}
+		return Pattern.matches(PASSWORD_REGEX, password);
 	}
 }	

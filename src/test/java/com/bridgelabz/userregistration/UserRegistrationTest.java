@@ -56,5 +56,15 @@ public class UserRegistrationTest {
 		boolean isValid = register.validatePhoneNumber("3564");
 		Assert.assertFalse(isValid);
 	}
+	@Test
+	public void givenPassword_When_ShouldReturnTrue() {
+		boolean isValid = register.validateEmail("bAe7ge2@1");
+		Assert.assertTrue(isValid);
+	}
+	@Test
+	public void givenPassword_When_ShouldReturnFalse() {
+		boolean isValid = register.validateEmail("c4&yr");
+		Assert.assertFalse(isValid);
+	}
 	
 }
