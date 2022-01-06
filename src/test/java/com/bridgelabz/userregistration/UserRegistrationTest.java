@@ -71,5 +71,10 @@ public class UserRegistrationTest {
 		boolean isValid = register.validatePassword("c81km0skd");
 		Assert.assertFalse(isValid);
 	}
+	@Test
+	public void givenEmail_WhenHaveConsecutiveDots_ShouldReturnFalse() {
+		boolean isValid = register.validateEmail("abc..23@gmail.com");
+		Assert.assertFalse(isValid);
+	}
 	
 }
