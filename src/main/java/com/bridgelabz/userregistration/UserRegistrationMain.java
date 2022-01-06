@@ -12,7 +12,9 @@ public class UserRegistrationMain {
 		System.out.println("Enter Last Name: ");
 		String lastName = sc.next();
 		registration.validateLastName(lastName);
-		
+		System.out.println("Enter Phone Number: ");
+		String number = sc.next();
+		registration.validatePhoneNumber(number);
 	}
 
 }
