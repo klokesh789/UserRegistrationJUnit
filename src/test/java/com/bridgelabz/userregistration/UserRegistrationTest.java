@@ -21,5 +21,20 @@ public class UserRegistrationTest {
 		boolean isValid = register.validateFirstName("lo");
 		Assert.assertFalse(isValid);
 	}
+	@Test
+	public void givenLastName_WhenProper_ShouldReturnTrue() {
+		boolean isValid = register.validateFirstName("Kotte");
+		Assert.assertTrue(isValid);
+	}
+	@Test
+	public void givenLastName_WhenNotProper_ShouldReturnFalse() {
+		boolean isValid = register.validateFirstName("kotte");
+		Assert.assertFalse(isValid);
+	}
+	@Test
+	public void givenLastName_WhenShort_ShouldReturnFalse() {
+		boolean isValid = register.validateFirstName("ko");
+		Assert.assertFalse(isValid);
+	}
 	
 }
