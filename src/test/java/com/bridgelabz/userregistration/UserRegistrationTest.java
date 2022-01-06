@@ -36,5 +36,15 @@ public class UserRegistrationTest {
 		boolean isValid = register.validateFirstName("ko");
 		Assert.assertFalse(isValid);
 	}
+	@Test
+	public void givenEmail_WhenProper_ShouldReturnTrue() {
+		boolean isValid = register.validateEmail("abc@gmail.com");
+		Assert.assertTrue(isValid);
+	}
+	@Test
+	public void givenEmail_When_ShouldReturnFalse() {
+		boolean isValid = register.validateEmail(".abc@gmail.com");
+		Assert.assertFalse(isValid);
+	}
 	
 }
