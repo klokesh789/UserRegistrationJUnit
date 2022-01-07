@@ -43,7 +43,7 @@ public class EmailTest {
 	
 	}
 	@Test
-	public void givenEmail_WhenProper_ShouldReturnAsPerCondition() {
+	public void givenEmail_WhenProper_ShouldReturnAsPerCondition() throws EmailException {
 		UserRegistration register = new UserRegistration();
 		boolean isValid = register.validateEmail(this.email);
 		Assert.assertEquals(this.expectedResult,isValid);
