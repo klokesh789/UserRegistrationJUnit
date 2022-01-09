@@ -3,24 +3,24 @@ package com.bridgelabz.userregistration;
 import java.util.Scanner;
 
 public class UserRegistrationMain {
-	public static void main(String[] args) throws FirstNameException, LastNameException, EmailException, PhoneNumberException, PasswordException {
-		UserRegistration registration = new UserRegistration();
+	static UserRegistration register = new UserRegistration();
+	public static void main(String[] args) throws UserValidationException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter First-Name: ");
 		String firstName = sc.next();
-		registration.validateFirstName(firstName);
+		register.validateName.validate(firstName);
 		System.out.println("Enter Last-Name: ");
 		String lastName = sc.next();
-		registration.validateLastName(lastName);
+		register.validateName.validate(lastName);
 		System.out.println("Enter Email: ");
 		String mail = sc.next();
-		registration.validateEmail(mail);
+		register.validateEmail.validate(mail);
 		System.out.println("Enter Phone Number: ");
 		String number = sc.next();
-		registration.validatePhoneNumber(number);
+		register.validatePhoneNumber.validate(number);
 		System.out.println("Enter Password: ");
 		String password = sc.next();
-		registration.validatePassword(password);
+		register.validateEmail.validate(password);
 		
 	}
 

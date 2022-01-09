@@ -5,99 +5,98 @@ import org.junit.Test;
 
 public class ExceptionTest {
 	@Test
-	public void givenFirstName_IsNull_ShouldThrowNullException() throws FirstNameException {
+	public void givenFirstName_IsNull_ShouldThrowNullException() throws UserValidationException {
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validateFirstName(null);
-		} catch (FirstNameException e) {
-			Assert.assertEquals(FirstNameException.ExceptionType.ENTERED_NULL, e.type);
+			register.validateName.validate(null);
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
 		}
 	}
 	@Test
-	public void givenFirstName_WhenEmpty_ShouldThrowEmptyException() throws FirstNameException{
+	public void givenFirstName_WhenEmpty_ShouldThrowEmptyException() throws UserValidationException{
 
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validateFirstName("");
-		} catch (FirstNameException e) {
-			Assert.assertEquals(FirstNameException.ExceptionType.ENTERED_EMPTY, e.type);
+			register.validateName.validate("");
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 	}
 	@Test
-	public void givenLastName_IsNull_ShouldThrowNullException() throws LastNameException {
+	public void givenLastName_IsNull_ShouldThrowNullException() throws 	UserValidationException {
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validateLastName(null);
-		} catch (LastNameException e) {
-			Assert.assertEquals(LastNameException.ExceptionType1.ENTERED_NULL, e.type);
+			register.validateName.validate(null);
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
 		}
 	}
 	@Test
-	public void givenLastName_WhenEmpty_ShouldThrowEmptyException1() throws LastNameException{
+	public void givenLastName_WhenEmpty_ShouldThrowEmptyException() throws UserValidationException{
 
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validateLastName("");
-		} catch (LastNameException e) {
-			Assert.assertEquals(LastNameException.ExceptionType1.ENTERED_EMPTY, e.type);
+			register.validateName.validate("");
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 	}
 	@Test
-	public void givenEmail_IsNull_ShouldThrowNullException() throws EmailException {
+	public void givenEmail_IsNull_ShouldThrowNullException() throws UserValidationException {
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validateEmail(null);
-		} catch (EmailException e) {
-			Assert.assertEquals(EmailException.ExceptionType2.ENTERED_NULL, e.type);
+			register.validateEmail.validate(null);
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
 		}
 	}
 	@Test
-	public void givenEmail_WhenEmpty_ShouldThrowEmptyException() throws EmailException{
+	public void givenEmail_WhenEmpty_ShouldThrowEmptyException() throws UserValidationException{
 
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validateEmail("");
-		} catch (EmailException e) {
-			Assert.assertEquals(EmailException.ExceptionType2.ENTERED_EMPTY, e.type);
+			register.validateEmail.validate("");
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 	}
 	@Test
-	public void givenPhoneNumber_IsNull_ShouldThrowNullException() throws PhoneNumberException {
+	public void givenPhoneNumber_IsNull_ShouldThrowNullException() throws UserValidationException {
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validatePhoneNumber(null);
-		} catch (PhoneNumberException e) {
-			Assert.assertEquals(PhoneNumberException.ExceptionType3.ENTERED_NULL, e.type);
+			register.validatePhoneNumber.validate(null);
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
 		}
 	}
 	@Test
-	public void givenPhoneNumber_WhenEmpty_ShouldThrowEmptyException() throws PhoneNumberException{
+	public void givenPhoneNumber_WhenEmpty_ShouldThrowEmptyException() throws UserValidationException{
 
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validatePhoneNumber("");
-		} catch (PhoneNumberException e) {
-			Assert.assertEquals(PhoneNumberException.ExceptionType3.ENTERED_EMPTY, e.type);
+			register.validatePhoneNumber.validate("");
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 	}
 	@Test
-	public void givenPassword_IsNull_ShouldThrowNullException() throws PasswordException {
+	public void givenPassword_IsNull_ShouldThrowNullException() throws UserValidationException {
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validatePassword(null);
-		} catch (PasswordException e) {
-			Assert.assertEquals(PasswordException.ExceptionType4.ENTERED_NULL, e.type);
+			register.validatePassword.validate(null);
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_NULL, e.type);
 		}
 	}
 	@Test
-	public void givenPassword_WhenEmpty_ShouldThrowEmptyException() throws PasswordException{
+	public void givenPassword_WhenEmpty_ShouldThrowEmptyException() throws UserValidationException{
 
 		UserRegistration register = new UserRegistration();
 		try {
-			register.validatePassword("");
-		} catch (PasswordException e) {
-			Assert.assertEquals(PasswordException.ExceptionType4.ENTERED_EMPTY, e.type);
+			register.validatePassword.validate("");
+		} catch (UserValidationException e) {
+			Assert.assertEquals(UserValidationException.ExceptionType.ENTERED_EMPTY, e.type);
 		}
 	}
-
 }

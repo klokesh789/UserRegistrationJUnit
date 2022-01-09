@@ -7,74 +7,72 @@ public class UserRegistrationTest {
 	UserRegistration register = new UserRegistration();
 
 	@Test
-	public void givenFirstName_WhenProper_ShouldReturnTrue() throws FirstNameException {
-		boolean isValid = register.validateFirstName("Lokesh");
+	public void givenFirstName_WhenProper_ShouldReturnTrue() throws UserValidationException {
+		boolean isValid = register.validateName.validate("Ravi");
 		Assert.assertTrue(isValid);
 	}
 	@Test
-	public void givenFirstName_WhenNotProper_ShouldReturnFalse() throws FirstNameException {
-		boolean isValid = register.validateFirstName("lokesh");
+	public void givenFirstName_WhenNotProper_ShouldReturnFalse() throws UserValidationException {
+		boolean isValid = register.validateName.validate("ravi");
 		Assert.assertFalse(isValid);
 	}
 	@Test
-	public void givenFirstName_WhenShort_ShouldReturnFalse() throws FirstNameException {
-		boolean isValid = register.validateFirstName("lo");
+	public void givenFirstName_WhenShort_ShouldReturnFalse() throws UserValidationException {
+		boolean isValid = register.validateName.validate("ra");
 		Assert.assertFalse(isValid);
 	}
 	@Test
-	public void givenLastName_WhenProper_ShouldReturnTrue() throws LastNameException {
-		boolean isValid = register.validateLastName("Kotte");
+	public void givenLastName_WhenProper_ShouldReturnTrue() throws UserValidationException {
+		boolean isValid = register.validateName.validate("Kumar");
 		Assert.assertTrue(isValid);
 	}
 	@Test
-	public void givenLastName_WhenNotProper_ShouldReturnFalse() throws LastNameException {
-		boolean isValid = register.validateLastName("kotte");
+	public void givenLastName_WhenNotProper_ShouldReturnFalse() throws UserValidationException {
+		boolean isValid = register.validateName.validate("kumar");
 		Assert.assertFalse(isValid);
 	}
 	@Test
-	public void givenLastName_WhenShort_ShouldReturnFalse() throws LastNameException {
-		boolean isValid = register.validateLastName("ko");
+	public void givenLastName_WhenShort_ShouldReturnFalse() throws UserValidationException {
+		boolean isValid = register.validateName.validate("ku");
 		Assert.assertFalse(isValid);
 	}
 	@Test
-	public void givenEmail_WhenProper_ShouldReturnTrue() throws EmailException {
-		boolean isValid = register.validateEmail("abc@gmail.com");
+	public void givenEmail_WhenProper_ShouldReturnTrue() throws UserValidationException {
+		boolean isValid = register.validateEmail.validate("abc@gmail.com");
 		Assert.assertTrue(isValid);
 	}
 	@Test
-	public void givenEmail_When_ShouldReturnFalse() throws EmailException {
-		boolean isValid = register.validateEmail(".abc@gmail.com");
+	public void givenEmail_WhenNotProper_ShouldReturnFalse() throws UserValidationException {
+		boolean isValid = register.validateEmail.validate(".abc@gmail.com");
 		Assert.assertFalse(isValid);
 	}
 	@Test
-	public void givenPhoneNumber_When_ShouldReturnTrue() throws PhoneNumberException {
-		boolean isValid = register.validatePhoneNumber("919851234549");
+	public void givenPhoneNumber_WhenProper_ShouldReturnTrue() throws UserValidationException {
+		boolean isValid = register.validatePhoneNumber.validate("917620690906");
 		Assert.assertTrue(isValid);
 	}
 	@Test
-	public void givenPhoneNumber_When_ShouldReturnFalse() throws PhoneNumberException {
-		boolean isValid = register.validatePhoneNumber("3564");
-		Assert.assertFalse(isValid);
+	public void givenPhoneNumber_WhenNotProper_ShouldReturnFalse() throws UserValidationException {
+		boolean isValid4 = register.validatePhoneNumber.validate("56545");
+		Assert.assertFalse(isValid4);
 	}
 	@Test
-	public void givenPassword_When_ShouldReturnTrue() throws PasswordException {
-		boolean isValid = register.validatePassword("bAe7ge2@1");
+	public void givenPassword_When1UpperCase_ShouldReturnTrue() throws UserValidationException {
+		boolean isValid = register.validatePassword.validate("aBd5gd2@g");
 		Assert.assertTrue(isValid);
 	}
 	@Test
-	public void givenPassword_WhenOneUpperCase_ShouldReturnTrue() throws PasswordException {
-		boolean isValid = register.validatePassword("bAe7ge2@1");
+	public void givenPassword_WhenProper_ShouldReturnTrue() throws UserValidationException {
+		boolean isValid = register.validatePassword.validate("aBd5gd2@g");
 		Assert.assertTrue(isValid);
 	}
 	@Test
-	public void givenPassword_When_ShouldReturnFalse() throws PasswordException {
-		boolean isValid = register.validatePassword("c81km0skd");
+	public void givenPassword_WhenNotProper_ShouldReturnFalse() throws UserValidationException {
+		boolean isValid = register.validatePassword.validate("b31fr7skd");
 		Assert.assertFalse(isValid);
 	}
 	@Test
-	public void givenEmail_WhenHaveConsecutiveDots_ShouldReturnFalse() throws EmailException {
-		boolean isValid = register.validateEmail("abc..23@gmail.com");
+	public void givenEmail_WhenHaveConsecutiveDots_ShouldReturnFalse() throws UserValidationException {
+		boolean isValid = register.validateEmail.validate("abc..23@gmail.com");
 		Assert.assertFalse(isValid);
-	}
-	
-}
+	}}
